@@ -1,11 +1,9 @@
 #include <stdio.h>
-
 /**
  * main - this is the main function.
- * discription - prints "with proper grammar, but the
- * 			 outcome is a piece of art,".
+ * discription - prints main.
  *
- * Return: Always 0.
+ * return: always 0.
  */
 int main(void)
 {
