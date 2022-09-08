@@ -2,7 +2,7 @@
 
 /**
  * main - this is the main function
- * Description - Prints Programming is like building a multilingual puzzle, followed by a new line
+ * Description - Prints Programming is like
  *
  * Return: Always 0
  */
