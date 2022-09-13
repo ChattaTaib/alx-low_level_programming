@@ -1,6 +1,7 @@
 #include "main.h"
 /**
  * _islower - check lowercase character
+ * @c: the int for the function argument
  *
  * Return: 0
  */
