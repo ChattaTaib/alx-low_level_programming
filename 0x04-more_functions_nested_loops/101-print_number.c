@@ -13,12 +13,12 @@ void print_number(int n)
 	int digit;
 	int places = 1000000000;
 
-	if (n < 0)/* E */
+	if (n < 0)
 	{
 		x = -n;
 		_putchar('-');
 	}
-	if (n == INT_MAX || n == INT_MIN) /* D */
+	if (n == INT_MAX || n == INT_MIN)
 	{
 		while (1)
 		{
@@ -52,15 +52,15 @@ void print_number(int n)
 			}
 		}
 	}
-	else if (n == 0)/* A */
+	else if (n == 0)
 		_putchar('0');
 	else
 	{
-		while (places > x)/* B */
+		while (places > x)
 			places /= 10;
 		while (places > 0)
 		{
-			digit = x / places;/* C */
+			digit = x / places;
 			_putchar((digit % 10) + '0');
 			places /= 10;
 		}
