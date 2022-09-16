@@ -1,22 +1,69 @@
 #include "main.h"
+#include <limits.h>
 
 /**
- * print_number - a function that prints an integer
- * @n: input
- * Return: inputted integer
- */
+* print_number - outputs a number
+* @n: an int given from main
+*
+* Return: no return is void
+*/
 
 void print_number(int n)
 {
-	unsigned int num = n;
+	int x = n;
+	int digit;
+	int places = 1000000000;
 
-	if (n < 0)
+	if (n < 0)/* E */
 	{
+		x = -n;
 		_putchar('-');
-		num = -num;
 	}
-
-	if ((num / 10) > 0)
-		print_number(num / 10);
-
-	_putchar((num % 10) + '0');
+	if (n == INT_MAX || n == INT_MIN) /* D */
+	{
+		while (1)
+		{
+			if (n == INT_MAX)
+			{
+				_putchar('2');
+				_putchar('1');
+				_putchar('4');
+				_putchar('7');
+				_putchar('4');
+				_putchar('8');
+				_putchar('3');
+				_putchar('6');
+				_putchar('4');
+				_putchar('7');
+				break;
+			}
+			else if (n == INT_MIN)
+			{
+				_putchar('2');
+				_putchar('1');
+				_putchar('4');
+				_putchar('7');
+				_putchar('4');
+				_putchar('8');
+				_putchar('3');
+				_putchar('6');
+				_putchar('4');
+				_putchar('8');
+				break;
+			}
+		}
+	}
+	else if (n == 0)/* A */
+		_putchar('0');
+	else
+	{
+		while (places > x)/* B */
+			places /= 10;
+		while (places > 0)
+		{
+			digit = x / places;/* C */
+			_putchar((digit % 10) + '0');
+			places /= 10;
+		}
+	}
+}
