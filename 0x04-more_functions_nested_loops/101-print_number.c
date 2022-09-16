@@ -2,67 +2,36 @@
 #include <limits.h>
 
 /**
-* print_number - outputs a number
-* @n: an int given from main
-*
-* Return: no return is void
-*/
+ * print_number - prints an integer.
+ * @n: input integer.
+ * Return: no return.
+ */
+
 void print_number(int n)
 {
-	int x = n;
-	int digit;
-	int places = 1000000000;
+	unsigned int m, d, count;
 
 	if (n < 0)
 	{
-		x = -n;
-		_putchar('-');
+		_putchar(45);
+		m = n * -1;
 	}
-	if (n == INT_MAX || n == INT_MIN)
-	{
-		while (1)
-		{
-			if (n == INT_MAX)
-			{
-				_putchar('2');
-				_putchar('1');
-				_putchar('4');
-				_putchar('7');
-				_putchar('4');
-				_putchar('8');
-				_putchar('3');
-				_putchar('6');
-				_putchar('4');
-				_putchar('7');
-				break;
-			}
-			else if (n == INT_MIN)
-			{
-				_putchar('2');
-				_putchar('1');
-				_putchar('4');
-				_putchar('7');
-				_putchar('4');
-				_putchar('8');
-				_putchar('3');
-				_putchar('6');
-				_putchar('4');
-				_putchar('8');
-				break;
-			}
-		}
-	}
-	else if (n == 0)
-		_putchar('0');
 	else
 	{
-		while (places > x)
-			places /= 10;
-		while (places > 0)
-		{
-			digit = x / places;
-			_putchar((digit % 10) + '0');
-			places /= 10;
-		}
+		m = n;
+	}
+
+	d = m;
+	count = 1;
+
+	while (d > 9)
+	{
+		d /= 10;
+		count *= 10;
+	}
+
+	for (; count >= 1; count /= 10)
+	{
+		_putchar(((m / count) % 10) + 48);
 	}
 }
