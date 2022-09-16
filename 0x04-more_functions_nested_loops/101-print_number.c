@@ -18,7 +18,6 @@ void print_number(int n)
 		x = -n;
 		_putchar('-');
 	}
-
 	if (n == INT_MAX || n == INT_MIN) /* D */
 	{
 		while (1)
@@ -37,7 +36,6 @@ void print_number(int n)
 				_putchar('7');
 				break;
 			}
-
 			else if (n == INT_MIN)
 			{
 				_putchar('2');
@@ -54,7 +52,6 @@ void print_number(int n)
 			}
 		}
 	}
-
 	else if (n == 0)/* A */
 		_putchar('0');
 	else
