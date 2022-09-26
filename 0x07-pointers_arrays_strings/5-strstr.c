@@ -1,18 +1,26 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * main - Entry point.
+ * _strstr - ffind the first occurrence
  *
- * Return: Always 0.
+ * @haystack: string
+ * @needle: substring
+ *
+ * Return: a pointer to needle or NULL if no byte is found
  */
-int main(void)
-{
-	char *s = "wworld of this";
-	char *f = "world";
-	char *t;
 
-	t = _strstr(s, f);
-	printf("%s\n", t);
+char *_strstr(char *haystack, char *needle)
+{
+	while (*haystack != 0)
+	{
+		char *a = haystack;
+		char *b = needle;
+
+		while (*haystack == *b && *b != 0 && *haystack != 0)
+			haystack++, b++;
+		if (*b == 0)
+			return (a);
+		haystack = ++a;
+	}
 	return (0);
 }
